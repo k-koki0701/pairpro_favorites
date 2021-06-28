@@ -2,9 +2,12 @@
 
 <h1>Blogs</h1>
 
+<p class="link_favorite"><%= link_to "お気に入り一覧へ", favorite_users_path %> </p>
+
 <table>
   <thead>
     <tr>
+      <th>名前</th>
       <th>タイトル</th>
       <th>内容</th>
       <th colspan="3"></th>
@@ -14,6 +17,7 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
+        <td><%= blog.user.name %></td>
         <td><%= blog.title %></td>
         <td><%= blog.content %></td>
         <td><%= link_to 'Show', blog %></td>
